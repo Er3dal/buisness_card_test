@@ -1,0 +1,8 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Gatto Matto
+N:Matto;Gatto;;;
+ORG:FELINO
+TEL;TYPE=CELL:123456789
+EMAIL:gatto@gmail.com
+END:VCARD
