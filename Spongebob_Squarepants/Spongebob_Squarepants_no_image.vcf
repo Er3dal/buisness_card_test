@@ -1,8 +1,0 @@
-BEGIN:VCARD
-VERSION:3.0
-FN:Spongebob Squarepants
-N:Squarepants;Spongebob;;;
-ORG:KRUSTY KRAB
-TEL;TYPE=CELL:+123456789
-EMAIL:spongebob@krustykrab.com
-END:VCARD
