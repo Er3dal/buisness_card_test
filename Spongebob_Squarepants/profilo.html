@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spongebob Squarepants</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      text-align: center;
+      padding: 40px;
+      margin: 0;
+    }
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    img {
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+    h1 {
+      margin: 10px 0 5px;
+    }
+    p {
+      margin: 5px 0;
+      color: #666;
+    }
+    a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 20px;
+      background: #007BFF;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    @media (max-width: 480px) {
+      body { padding: 20px; }
+      .card { padding: 20px; }
+      img { width: 100px; height: 100px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="img.jpg" alt="Spongebob Squarepants">
+    <h1>Spongebob Squarepants</h1>
+    <p>cuoco</p>
+<p>📞 <a href="tel:+123456789">+123456789</a></p>
+<p>✉️ <a href="mailto:spongebob@krustykran.com">spongebob@krustykran.com</a></p>
+<p>🌐 <a href="https://www.krustykrab.com" target="_blank">www.krustykrab.com</a></p>
+<a class="button" id="vcardLink" href="Spongebob_Squarepants_no_image.vcf" download>📇 Salva nei contatti</a>
+  </div>
+
+  <script>
+    const isAppleDevice = /Mac|iPhone|iPad|iPod/.test(navigator.platform) || 
+                          (/iPhone|iPad|iPod/.test(navigator.userAgent) && !window.MSStream);
+    if (isAppleDevice) {
+        document.getElementById('vcardLink').href = "Spongebob_Squarepants_with_image.vcf";
+    }
+  </script>
+</body>
+</html>
