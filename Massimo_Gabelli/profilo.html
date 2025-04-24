@@ -24,7 +24,14 @@
 <p>✉️ <a href="mailto:massimo.gabelli@cglex.it">massimo.gabelli@cglex.it</a></p>
 <p>🌐 <a href="https://www.cglex.it" target="_blank">www.cglex.it</a></p>
 
-    <a class='button' href='Massimo_Gabelli_no_image.vcf' download>📇 Salva nei contatti</a>
+<a id="downloadLink" class='button' href='Massimo_Gabelli_no_image.vcf' download>📇 Salva nei contatti</a>
+<script>
+  const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  const link = document.getElementById("downloadLink");
+  if (isiOS) {
+    link.href = 'Massimo_Gabelli_with_image.vcf';
+  }
+</script>
   </div>
 </body>
 </html>
