@@ -1,11 +1,9 @@
-document.addEventListener("DOMContentLoaded", function() {
-  const isApple = /Macintosh|iPhone|iPad|iPod/i.test(navigator.userAgent);
-  const vcfApple = "{vcf_path_with_img}";
-  const vcfOther = "{vcf_path_no_img}";
+const isApple = /iPad|iPhone|iPod|Mac/.test(navigator.userAgent);
+const link = document.getElementById("smartDownload");
 
-  const link = document.getElementById("smartDownload");
-  const href = isApple ? vcfApple : vcfOther;
-
-  link.href = href;
-  link.setAttribute("download", href);
-});
+if (isApple) {
+  // Costruiamo il percorso verso la versione con immagine
+  const currentHref = link.getAttribute("href");
+  const newHref = currentHref.replace("_no_image.vcf", "_with_image.vcf");
+  link.setAttribute("href", newHref);
+}
