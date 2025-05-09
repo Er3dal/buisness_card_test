@@ -18,9 +18,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
   btn.onclick = () => {
     modal.style.display = "block";
+    const pageUrl = document.getElementById("smartDownload").dataset.pageurl;
     document.getElementById("qrcode").innerHTML = "";
     new QRCode(document.getElementById("qrcode"), {
-      text: "{page_url}",
+      text: pageUrl,
       width: 200,
       height: 200
     });
