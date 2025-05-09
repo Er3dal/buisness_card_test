@@ -11,13 +11,14 @@
   <div class='card'>
     <div class='profile-container'>
       <img class='profile-img' src='img.jpg' alt='Massimo Gabelli'>
+      <button id="qrButton" class="qr-btn" title="Mostra QR Code">📱</button>
       <h1 class='head-name'>Massimo Gabelli</h1>
       <div class="title-container">
         <div class='title'>Dottore Commercialista e Avvocato</div>
         <div class='company'>CORNELLI GABELLI E ASSOCIATI</div>
       </div>
     </div>
-    
+
     <div class="info-grid">
       <div class="info-card">
         <i class="fas fa-mobile-alt"></i>
@@ -59,10 +60,20 @@
     </div>
 
     <div class='footer'>
-      <span>Creato con <i class="fas fa-heart" style="color: var(--secondary);"></i> da Gate Group S.R.L.</span>
+      <span>Creato con <i class="fas fa-heart" style="color: var(--secondary);"></i> da GateGroup</span>
     </div>
   </div>
 
+  <!-- QR Modal -->
+  <div id="qrModal" class="qr-modal">
+    <div class="qr-content">
+      <span id="qrClose" class="qr-close">&times;</span>
+      <h2>Scansiona per aprire il profilo</h2>
+      <div id="qrcode"></div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
