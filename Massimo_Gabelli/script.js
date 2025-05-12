@@ -16,20 +16,31 @@ window.addEventListener("DOMContentLoaded", () => {
   const btn = document.getElementById("qrButton");
   const span = document.getElementById("qrClose");
 
-  btn.onclick = () => {
-    modal.style.display = "block";
-    const pageUrl = document.getElementById("smartDownload").dataset.pageurl;
-    document.getElementById("qrcode").innerHTML = "";
-    new QRCode(document.getElementById("qrcode"), {
+  btn?.addEventListener("click", () => {
+    const qrTarget = document.getElementById("qrcode");
+    const smartDownload = document.getElementById("smartDownload");
+    const pageUrl = smartDownload?.dataset.pageurl || window.location.href;
+
+    qrTarget.innerHTML = "";
+    new QRCode(qrTarget, {
       text: pageUrl,
       width: 200,
       height: 200
     });
-  };
 
-  span.onclick = () => (modal.style.display = "none");
+    modal.classList.add("show");
+    modal.style.display = "block";
+  });
 
-  window.onclick = (event) => {
-    if (event.target == modal) modal.style.display = "none";
-  };
+  span?.addEventListener("click", () => {
+    modal.classList.remove("show");
+    modal.style.display = "none";
+  });
+
+  window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      modal.classList.remove("show");
+      modal.style.display = "none";
+    }
+  });
 });
