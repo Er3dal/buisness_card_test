@@ -15,9 +15,9 @@ window.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("qrModal");
   const btn = document.getElementById("qrButton");
   const span = document.getElementById("qrClose");
+  const qrTarget = document.getElementById("qrcode");
 
   btn?.addEventListener("click", () => {
-    const qrTarget = document.getElementById("qrcode");
     const smartDownload = document.getElementById("smartDownload");
     const pageUrl = smartDownload?.dataset.pageurl || window.location.href;
 
@@ -41,6 +41,40 @@ window.addEventListener("DOMContentLoaded", () => {
     if (event.target === modal) {
       modal.classList.remove("show");
       modal.style.display = "none";
+    }
+  });
+
+  // Share button logic
+  const shareBtn = document.getElementById("qrShareBtn");
+  shareBtn?.addEventListener("click", async () => {
+    const smartDownload = document.getElementById("smartDownload");
+    const pageUrl = smartDownload?.dataset.pageurl || window.location.href;
+
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: document.title,
+          url: pageUrl
+        });
+      } catch (err) {
+        console.error("Share failed:", err);
+      }
+    } else {
+      alert("La condivisione non è supportata dal tuo browser.");
+    }
+  });
+
+  // Download QR code image logic
+  const downloadBtn = document.getElementById("qrDownloadBtn");
+  downloadBtn?.addEventListener("click", () => {
+    const qrCanvas = qrTarget.querySelector("canvas");
+    if (qrCanvas) {
+      const link = document.createElement("a");
+      link.href = qrCanvas.toDataURL("image/png");
+      link.download = "QR_Code.png";
+      link.click();
+    } else {
+      alert("Errore nel generare l'immagine QR.");
     }
   });
 });

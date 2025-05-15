@@ -11,7 +11,9 @@
   <div class='card'>
     <div class='profile-container'>
       <img class='profile-img' src='img.jpg' alt='Ciro Cornelli'>
-      <button id="qrButton" class="qr-btn" title="Mostra QR Code"><img src="https://static-00.iconduck.com/assets.00/qr-scan-icon-512x512-9bsp061y.png" alt='Ciro Cornelli'></button>
+      <button id="qrButton" class="qr-btn" title="Mostra QR Code" aria-label="Mostra QR Code">
+        <img src="https://static-00.iconduck.com/assets.00/qr-scan-icon-512x512-9bsp061y.png" alt='Ciro Cornelli'>
+      </button>
       <h1 class='head-name'>Ciro Cornelli</h1>
       <div class="title-container">
         <div class='title'>Dottore Commercialista</div>
@@ -42,15 +44,7 @@
       <i class="fas fa-map-marker-alt"></i> Dove trovarci
     </div>
     <div class="map-card">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.3620866847305!2d9.187982176500615!3d45.46250947107398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c6a94e172425%3A0x1a8d69b5417b9e7c!2sCornelli%20Gabelli%20e%20Associati!5e0!3m2!1sit!2sit!4v1746721396171!5m2!1sit!2sit"
-        width="100%"
-        height="250"
-        style="border:0; border-radius: 16px;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="250" style="border:0; border-radius: 16px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
     <div class="download-section">
@@ -66,9 +60,17 @@
 
   <div id="qrModal" class="qr-modal">
     <div class="qr-content">
-      <span id="qrClose" class="qr-close">&times;</span>
-      <h2>Scansiona per aprire il profilo</h2>
+      <span id="qrClose" class="qr-close" role="button" aria-label="Chiudi QR Modal">&times;</span>
+      <h2>Scansiona il QR</h2>
       <div id="qrcode"></div>
+      <div class="qr-actions">
+        <button id="qrShareBtn" class="qr-action-btn">
+          <i class="fas fa-share-alt"></i> Condividi
+        </button>
+        <button id="qrDownloadBtn" class="qr-action-btn">
+          <i class="fas fa-download"></i> Scarica QR
+        </button>
+      </div>
     </div>
   </div>
 

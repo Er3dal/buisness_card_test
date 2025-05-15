@@ -392,3 +392,31 @@ h1 {
     align-items: center;
     margin-top: 15px;
 }
+
+.qr-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.qr-action-btn {
+    flex: 1;
+    padding: 10px;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: var(--transition);
+}
+
+.qr-action-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
